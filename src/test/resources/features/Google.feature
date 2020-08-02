@@ -8,4 +8,4 @@ Feature: Search Car in London
     And verify the available "gumtree" Links number
     Then navigate to each Gumtree Link
     Then verify the title is displayed
-    Then verify the number of cars grater the 0
+    Then verify the number of cars grater then 0

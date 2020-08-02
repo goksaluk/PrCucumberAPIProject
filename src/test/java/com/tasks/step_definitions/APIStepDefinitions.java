@@ -20,8 +20,8 @@ public class APIStepDefinitions {
 
     Faker f = new Faker();
 
-    @When("The user is on the Placeholder page")
-    public void the_user_is_on_the_Placeholder_page() {
+    @When("The user is on Placeholder page")
+    public void the_user_is_on_Placeholder_page() {
         baseURI = "https://jsonplaceholder.typicode.com";
     }
 

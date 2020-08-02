@@ -68,8 +68,8 @@ public class GoogleStepDefinitions {
         }
     }
 
-    @Then("verify the number of cars grater the {int}")
-    public void verifyTheNumberOfCarsGraterThe(int number)  {
+    @Then("verify the number of cars grater then {int}")
+    public void verifyTheNumberOfCarsGraterThen(int number)  {
 
         for (int num : numOfGumtreeCars) {
             Assert.assertTrue(num>number);
