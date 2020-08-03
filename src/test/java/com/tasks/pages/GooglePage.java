@@ -31,19 +31,20 @@ public class GooglePage {
     @FindBy(xpath = "//button[contains(text(),'I Accept')]")
     public WebElement acceptBtn;
 
-
+    //click searchBox
     public void searchElement(String searchElement){
         searchBox.click();
         searchBox.sendKeys(searchElement, Keys.ENTER);
     }
 
-    // to get total the number of cars
+    // get total the number of cars
     public String getResultOfSeaarch(){
         String result = results.getText();
         String[] searchResult = result.split(" ");
         return searchResult[1];
     }
 
+    //Gumtree links
     public List<WebElement> gumtreeLinks;
 
     public List<WebElement> getGumtreeLinks(String link){
@@ -52,6 +53,7 @@ public class GooglePage {
         return gumtreeLinks;
     }
 
+    //Number of cars
     public int getNumberOfCars()  {
         String number = numberOfCarsGumtree.getText();
         System.out.println("number = " + number);
@@ -63,11 +65,13 @@ public class GooglePage {
         return numCars;
     }
 
+    //Explicit wait
     public WebElement waitForVisibility(WebElement element) {
         WebDriverWait wait = new WebDriverWait(Driver.get(), 20);
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    //Page title
     public String getTitle(){
         return Driver.get().getTitle();
     }
