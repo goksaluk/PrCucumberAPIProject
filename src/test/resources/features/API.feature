@@ -5,8 +5,8 @@
       When the user is on Placeholder page
       And  the user accepts content type as "application/json"
 
-    Scenario: Printing email adress and verify a valid post IDs
-      And  path parameter should be "postId", random id: "1" and sends request to "/posts/{postId}/comments"
+    Scenario: Printing email adress and verifying a valid post IDs
+      And  path parameter should be "postId", random id: "1" and send request to "/posts/{postId}/comments"
       And  the user prints out their email adress to the console
       Then the user gets this user's associated posts
       And  verify that they contains a valid post IDs an integer between one and hundred

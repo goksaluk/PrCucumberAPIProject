@@ -35,8 +35,8 @@ public class APIStepDefinitions {
     }
 
 
-    @When("path parameter should be {string}, random id: {string} and sends request to {string}")
-    public void path_parameter_should_be_random_id_and_sends_request_to(String key, String value, String path) {
+    @When("path parameter should be {string}, random id: {string} and send request to {string}")
+    public void path_parameter_should_be_random_id_and_send_request_to(String key, String value, String path) {
         response = given().contentType(contentType).
                            pathParam(key,value).
                     and(). get(path);
