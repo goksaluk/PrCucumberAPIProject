@@ -1,0 +1,23 @@
+Task 1: Functional E2E Automation
+Functional automation for web UI testing using Selenium Web Driver.
+Open Google and perform a search for ‘Cars in London’.
+Get all search results displayed and validate how many Gumtree links there are available
+(you may only focus on the first page of the search results for the purpose of this task).
+Navigate to each Gumtree link
+      - confirm the title is displayed
+      - the number of cars is greater than 0.
+
+Requirements:
+•             If you use Java or C#, please write a feature file in BDD style using Gherkin language
+•             Develop the automation framework for the above feature.
+
+
+Task 2: Functional API Testing
+Functional automation for API testing. Write a test in Java or C# for the following REST API:
+https://jsonplaceholder.typicode.com/
+Requirements:
+Develop a postman collection for testing all http methods(Get, Post, PUT, Patch, Delete) for “/posts” resource.
+Develop the automation framework for the below feature
+Get a random user (userID), print out its email address to console.
+Using this userID, get this user’s associated posts and verify they contains a valid Post IDs (an Integer between 1 and 100).
+Do a post using same userID with a non-empty title and body, verify the correct response is returned (since this is a mock API, it might not return Response code 200, so check the documentation).
