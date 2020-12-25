@@ -1,0 +1,29 @@
+Automated Testing Challenge (At home test)
+
+The challenge is centred around automation; you have 2 days from now to:
+(Note : Kindly use TDD approach with any programming language your familiar with)
+
+1)	Open the following Web app from https://davies-group.com/
+
+2) 	Identify means to run automated tests on it using the below scenarios:-
+A)  Click on ‘Twitter’ and ‘linkedIn’ Icon’s on the home page and Validate if it navigates to respective social media webpages.
+
+B1) Click on ‘Solutions’ – Scroll down and click on ‘View All’  – look for ‘Fire investigation’ Case study and click on it – Validate if it’s navigated to right page.
+B2) Capture the Results section from ‘Fire Investigation’ case study.
+
+C) Click on Menu ->  ‘About Us’ -> ‘Locations’ and capture Stoke Office address from the Maps.
+
+3)	Produce a set of automated tests.
+
+Submitting your results
+
+1) Upload the code to a git hub
+
+2) Share the details with us
+
+3) Submit a README file with instructions on how to download the code so we can check it out
+
+4) We download the code and review!
+
+
+
