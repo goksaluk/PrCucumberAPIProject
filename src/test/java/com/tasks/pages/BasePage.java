@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
     public BasePage(){
+
         PageFactory.initElements(Driver.get(),this);
     }
 
@@ -17,19 +18,23 @@ public class BasePage {
     }
 
     public String getPageTitle() {
+
         return Driver.get().getTitle();
     }
 
     public WebElement navigateToModule(String module) {
 
         String moduleLocator = "//a[contains(text(),'"+module+"')]";
-        WebElement moduleElement = null;
+       // WebElement moduleElement = Driver.get().findElement(By.xpath(moduleLocator)); -->neden bunu kullanmadik....? ve try/catch uygulama sekli ??
+        WebElement moduleElement = null;  //niye null
         try {
             BrowserUtils.waitForClickablility(By.xpath(moduleLocator), 5);
             moduleElement = Driver.get().findElement(By.xpath(moduleLocator));
         } catch (Exception e) {
-            BrowserUtils.clickWithWait(By.xpath(moduleLocator), 5);
+            e.printStackTrace();
+           // BrowserUtils.clickWithWait(By.xpath(moduleLocator), 5);
         }
+
 
         return moduleElement;
     }

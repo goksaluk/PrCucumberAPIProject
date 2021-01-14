@@ -2,10 +2,7 @@ package com.tasks.pages;
 
 import com.tasks.utilities.BrowserUtils;
 import com.tasks.utilities.Driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.*;
@@ -19,36 +16,31 @@ public class HomePage extends BasePage {
     public List<WebElement> socialMediaLinks;
 
 
+    ArrayList<String> socialMediaLinksPageTitle =new ArrayList<>();
 
-    ArrayList<String> socialMediaLinksPageTitle;
-
-    public void switchToWindow(){
+    public void switchToWindow() {
 
         BrowserUtils.waitForPageToLoad(10);
         BrowserUtils.scrollToEndOfPage();
 //        JavascriptExecutor jsx = (JavascriptExecutor)Driver.get();
 //        jsx.executeScript("window.scrollBy(0,4700)", "");
-
-        socialMediaLinksPageTitle = new ArrayList<>();
-
         String currentWindow = Driver.get().getWindowHandle();
         for (WebElement socialMediaLink : socialMediaLinks) {
             socialMediaLink.click();
             BrowserUtils.waitForClickablility(socialMediaLink, 10);
-            //      Driver.get().switchTo().window(currentWindow);
-
+            //      Driver.get().switchTo().window(currentWindow);7
         }
         Set<String> windowHandles = Driver.get().getWindowHandles();
 
-        Iterator<String> window =windowHandles.iterator();
+        Iterator<String> window = windowHandles.iterator();
 
-        do{
+        do {
             String windowHandle = window.next().toString();
             Driver.get().switchTo().window(windowHandle);
             BrowserUtils.waitForPageToLoad(10);
             BrowserUtils.waitFor(5);
             socialMediaLinksPageTitle.add(getPageTitle());
-        }while(window.hasNext());
+        } while (window.hasNext());  // bi fazla run yapiyor
 
 //            for (String windowHandle : windowHandles) {
 //                    Driver.get().switchTo().window(windowHandle);
@@ -71,9 +63,9 @@ public class HomePage extends BasePage {
             for (String socialMediaLink : socialMediaLinks) {
                 if (pageTitle.contains(socialMediaLink)) {
                     System.out.println("pageTitle = " + pageTitle);
-                    if(socialMediaLink.equals("Twitter")) {
+                    if (socialMediaLink.equals("Twitter")) {
                         twitterFlag = true;
-                    }else if(socialMediaLink.equals("LinkedIn"))
+                    } else if (socialMediaLink.equals("LinkedIn"))
                         linkedinFlag = true;
                 }
             }
@@ -84,6 +76,45 @@ public class HomePage extends BasePage {
         flag = twitterFlag && linkedinFlag;
 
         System.out.println("flag = " + flag);
+        return flag;
+
+    }
+
+    @FindBy(xpath = "//ul[@class='footer__socials']/li")
+    public List<WebElement> links;
+
+    public void navigateToWindows() {
+
+        BrowserUtils.waitForPageToLoad(10);
+
+        for (WebElement hand : links) {
+            hand.click();
+            BrowserUtils.waitFor(3);
+        }
+
+    }
+
+    public boolean checkPageTitle(List<String> socialM) {
+
+        //eksik..
+        boolean flag = false;
+        for (String media : socialM){
+            for (String handle : Driver.get().getWindowHandles()) {
+                Driver.get().switchTo().window(handle);
+                if (Driver.get().getTitle().contains(media)) {
+                    flag =true;
+                    System.out.println("Mello= " + Driver.get().getTitle());
+                }else {
+                    System.out.println("Hello = " + Driver.get().getTitle());
+                }
+
+            }
+
+        }
+
+
+       // Set<String> windows = Driver.get().getWindowHandles();
+
         return flag;
 
     }

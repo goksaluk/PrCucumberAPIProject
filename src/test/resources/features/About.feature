@@ -7,4 +7,5 @@ Feature: About Module
   @about
   Scenario: verify About module
     When I click the "Locations" submodule under "About" Us module
-    Then I capture the "Stoke on Trent" office address
+    #Then I capture the "Stoke on Trent" office address
+    Then I capture that the "Stoke on Trent" office address

@@ -12,6 +12,13 @@ Feature: Social Media Links
       |Twitter|
       |LinkedIn|
 
-
-
+@2ndSolution
+Scenario: Gksl
+  When I scroll down
+  Then I click the buttons of social medias
+  |twitter|
+  |linkedin|
+  And I verify social media page titles
+    |Twitter|
+    |LinkedIn|
 

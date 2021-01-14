@@ -34,4 +34,10 @@ public class AboutStepDefs {
         Assert.assertEquals(officeLocation,actualOfficeLocation);
 
     }
+
+    @Then("I capture that the {string} office address")
+    public void iCaptureThatTheOfficeAddress(String location) throws IOException {
+        String actualLocation =aboutPage.getOffice(location);
+        Assert.assertEquals(location,actualLocation);
+    }
 }

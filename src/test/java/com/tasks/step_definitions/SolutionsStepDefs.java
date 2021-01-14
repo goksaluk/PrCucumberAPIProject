@@ -38,7 +38,7 @@ public class SolutionsStepDefs {
     @Then("I verify that it's navigated to {string} page")
     public void iVerifyThatItSNavigatedToPage(String expectedPageTitle) {
         String actualPageTitle = solutionsPage.getPageTitle();
-        Assert.assertEquals("verify that navigate to right page",expectedPageTitle,actualPageTitle);
+        Assert.assertEquals("verify that navigate to right page",expectedPageTitle,actualPageTitle);  // Dynamic olarak title'i alamz miyiz?
     }
     @Then("I capture results section on Fire investigation case study")
     public void i_capture_results_section_on_fire_investigation_case_study() throws IOException {

@@ -40,7 +40,7 @@ public class SolutionsPage extends BasePage{
         BrowserUtils.waitForClickablility(viewAllButton,10);
 //        JavascriptExecutor jsx = (JavascriptExecutor)Driver.get();
 //        jsx.executeScript("window.scrollBy(910,1815)", "");
-        BrowserUtils.clickWithJS(viewAllButton);
+        BrowserUtils.clickWithJS(viewAllButton);   /// neden kullandik..?  Bir de scroll down a ihtiyac olmadi mi?
 //
 //        actions.moveToElement(viewAllButton).click(viewAllButton).perform();
 
